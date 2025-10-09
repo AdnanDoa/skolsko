@@ -23,9 +23,7 @@ CREATE TABLE IF NOT EXISTS `authors` (
   PRIMARY KEY (`author_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `authors` (`author_id`, `name`, `bio`, `email`) VALUES
-(1, 'J.K. Rowling', 'British author best known for Harry Potter series', 'jkrowling@email.com'),
-(2, 'Stephen King', 'Master of horror fiction', 'sking@email.com');
+ 
 
 -- --------------------------------------------------------
 -- Table structure for table `books`
@@ -47,9 +45,6 @@ CREATE TABLE IF NOT EXISTS `books` (
   KEY `idx_books_genre` (`genre_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `books` (`book_id`, `title`, `author_id`, `narrator_id`, `genre_id`, `description`, `duration`, `price`, `created_at`) VALUES
-(1, 'Harry Potter and the Philosopher\'s Stone', 1, 1, 1, 'First book in the Harry Potter series', 480, 24.99, '2025-09-30 15:07:23'),
-(2, 'The Shining', 2, 2, 2, 'Classic horror novel', 420, 19.99, '2025-09-30 15:07:23');
 
 -- --------------------------------------------------------
 -- Table structure for table `book_files`
@@ -77,12 +72,6 @@ CREATE TABLE IF NOT EXISTS `genres` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `genres` (`genre_id`, `name`) VALUES
-(1, 'Fantasy'),
-(2, 'Horror'),
-(3, 'Mystery'),
-(4, 'Science Fiction'),
-(5, 'Romance');
 
 -- --------------------------------------------------------
 -- Table structure for table `narrators`
@@ -95,9 +84,6 @@ CREATE TABLE IF NOT EXISTS `narrators` (
   PRIMARY KEY (`narrator_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `narrators` (`narrator_id`, `name`, `bio`) VALUES
-(1, 'Jim Dale', 'Award-winning narrator known for Harry Potter series'),
-(2, 'Stephen Fry', 'English actor and narrator');
 
 -- --------------------------------------------------------
 -- Table structure for table `recommendations_log`
@@ -180,10 +166,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-INSERT INTO `users` (`user_id`, `name`, `email`, `password_hash`, `role`, `created_at`, `subscription_type`, `subscription_expiry`) VALUES
-(1, 'John Doe', 'john@email.com', 'hashed_password123', 'user', '2025-09-30 15:07:23', 'premium', '2024-12-31'),
-(2, 'Jane Smith', 'jane@email.com', 'hashed_password456', 'user', '2025-09-30 15:07:23', 'free', NULL);
 
 -- --------------------------------------------------------
 -- Table structure for table `user_library`

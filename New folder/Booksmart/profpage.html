@@ -451,11 +451,11 @@ footer {
     </a>
     <div class="search-bar"><input type="text" placeholder="Pretraži knjige..."></div>
     <div class="profile" id="profileBox">
-        <img src="https://i.pravatar.cc/50?img=32" alt="Profile">
+        <img id="headerAvatar" src="https://i.pravatar.cc/50?img=32" alt="Profile">
         <div class="dropdown">
-            <img src="https://i.pravatar.cc/80?img=32" alt="Account Image">
+            <img id="dropdownAvatar" src="https://i.pravatar.cc/80?img=32" alt="Account Image">
             <a href="profpage.html">Profil</a>
-            <a href="login.html">Logout</a>
+            <a href="logout.php">Logout</a>
         </div>
     </div>
 </header>
@@ -626,8 +626,13 @@ async function loadProfile() {
         }
         const data = await res.json();
         const user = data.user;
-        document.getElementById('profilePicture').src = user.avatar_url || 'https://i.pravatar.cc/150?img=32';
-        document.getElementById('profileName').textContent = user.name || 'User';
+    document.getElementById('profilePicture').src = user.avatar_url || 'https://i.pravatar.cc/150?img=32';
+    document.getElementById('profileName').textContent = user.name || 'User';
+    // populate header/avatar images if present
+    const headerAvatar = document.getElementById('headerAvatar');
+    if (headerAvatar) headerAvatar.src = user.avatar_url || 'https://i.pravatar.cc/50?img=32';
+    const dropdownAvatar = document.getElementById('dropdownAvatar');
+    if (dropdownAvatar) dropdownAvatar.src = user.avatar_url || 'https://i.pravatar.cc/80?img=32';
         // username fallback: use email local part
         const uname = (user.email || 'user').split('@')[0];
         document.getElementById('profileUsername').textContent = '@' + uname;
