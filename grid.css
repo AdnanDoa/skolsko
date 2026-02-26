@@ -1,0 +1,162 @@
+@media only screen and (min-width:577px) 
+{ 
+.sadrzaj{ 
+    display: grid; 
+    grid-template-areas: 'header header header header header'  
+    'sidebar_left content content content sidebar_right' 
+    'sidebar_left content content content sidebar_right' 
+    'sidebar_left content content content sidebar_right' 
+    'sidebar_left content content content sidebar_right' 
+    'sidebar_left content content content sidebar_right' 
+    'footer footer footer footer footer'; 
+    grid-gap: 10px; 
+    background-color: #2196F3; 
+    padding: 10px; 
+    min-height: 100vh; 
+    height:fit-content; 
+    min-width: 100vw; 
+} 
+ 
+.sadrzaj > div{ 
+    background-color: rgba(255,255,255,0.8); 
+    text-align: center; 
+    padding: 20px 0; 
+    font-size: 20px; 
+} 
+ 
+.header{ 
+    grid-area:header; 
+    height: fit-content; 
+} 
+ 
+.sidebar_left{ 
+    grid-area: siderbar_left; 
+} 
+ 
+.sidebar_left{ 
+    grid-area: sidebar_left; 
+} 
+ 
+.sidebar_right{ 
+grid-area: sidebar_right; 
+} 
+ 
+.content{ 
+    grid-area:content; 
+} 
+ 
+.footer{ 
+    grid-area:footer; 
+} 
+ 
+.footer{ 
+ 
+background-color:#2196F3; 
+padding: 10px; 
+ 
+} 
+ 
+.footer a{ 
+    border-color: blue; 
+    border-style: solid; 
+    background-color: green; 
+    width: 10%; 
+    padding: 1px; 
+    border-radius: 10px; 
+    color: white; 
+    justify-self: stretch; 
+} 
+ 
+.footer > div{ 
+    background-color: blue; 
+} 
+ 
+ul{ 
+list-style-type: none; 
+} 
+ 
+} /*Kraj min-width:576px*/ 
+ 
+ 
+ 
+ 
+ 
+ 
+@media only screen and (max-width:576px){ 
+.sadrzaj{ 
+    display: grid; 
+    grid-template-areas: 'header header header header header'  
+    'sidebar_right sidebar_right sidebar_right sidebar_right sidebar_right' 
+    'content content content content content' 
+    'content content content content content' 
+    'sidebar_left sidebar_left sidebar_left sidebar_left sidebar_left' 
+    'footer footer footer footer footer'; 
+    grid-gap: 10px; 
+    background-color: #2196F3; 
+    padding: 10px; 
+    align-items: stretch; 
+    min-height: 100vh; 
+    min-width: 100vw; 
+    height: max-content; 
+} 
+ 
+.sadrzaj > div{ 
+    background-color: rgba(255,255,255,0.8); 
+    text-align: center; 
+    padding: 20px 0; 
+    font-size: 20px; 
+} 
+ 
+.header{ 
+    grid-area:header; 
+    height: fit-content; 
+} 
+ 
+.sidebar_left{ 
+    grid-area: siderbar_left; 
+} 
+ 
+.sidebar_left{ 
+    grid-area: sidebar_left; 
+} 
+ 
+.sidebar_right{ 
+grid-area: sidebar_right; 
+} 
+ 
+.content{ 
+    grid-area:content; 
+} 
+ 
+.footer{ 
+    grid-area:footer; 
+} 
+ 
+.footer{ 
+ 
+display:grid; 
+background-color:#2196F3; 
+padding: 10px; 
+ 
+} 
+ 
+.footer a{ 
+    border-color: blue; 
+    border-style: solid; 
+    background-color: green; 
+    width: 10%; 
+    padding: 1px; 
+    border-radius: 10px; 
+    color: white; 
+    justify-self: stretch; 
+} 
+ 
+.footer > div{ 
+    background-color: blue; 
+} 
+ 
+ul{ 
+list-style-type: none; 
+} 
+ 
+} /*Kraj za max-width:576px*/
